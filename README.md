@@ -1,0 +1,2 @@
+# SampleSheet
+Create an Illumina Sample Sheet, the comma-separated text document required by Illumina sequencing systems to specify (1) sequencing parameters and (2) sample-barcode relationships. Customize [Header], [Reads], and [Data] sections; in particular, draw on up to 192 8-bp barcodes (96x i7 &amp; 96x i5 indices) to specify up to 9,216 sample-barcode relationships for multiplexed amplicon sequencing. 
