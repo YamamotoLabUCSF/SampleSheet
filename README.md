@@ -8,10 +8,10 @@ Create an Illumina® Sample Sheet , the comma-separated text document required b
 * [Setup](#setup)
 * [Requirements](#requirements)
 * [Synopsis](#synopsis)
-* [Operation notes](#operationnotes)
-* [Input notes](#inputnotes)
-* [Output notes](#outputnotes)
-* [Visual summary of key script operations](#visualsummaryofkeyscriptoperations)
+* [Operation notes](#operation notes)
+* [Input notes](#input notes)
+* [Output notes](#output notes)
+* [Visual summary of key script operations](#visual summary of key script operations)
 * [Status](#status)
 * [Contact](#contact)
   
@@ -135,7 +135,7 @@ DG-2, 1-96, 78
 <br clear="all" />
 **output:**
 <br clear="all" />
-<img src="img/SampleSheet_example.png" align="mid" width="500">
+<img src="SampleSheet_img/SampleSheet_example.png" align="mid" width="500">
 
 
 
