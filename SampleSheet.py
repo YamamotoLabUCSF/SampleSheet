@@ -1,5 +1,5 @@
 #!/usr/local/bin/anaconda3/bin/python3
-# NAME: Kirk Ehmsen
+# AUTH: Kirk Ehmsen
 # FILE: SampleSheet.py
 # DATE: 08/01/2019
 # DESC: This script accepts text to standard input, and returns a Sample Sheet file
