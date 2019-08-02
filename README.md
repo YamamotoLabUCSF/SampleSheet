@@ -8,7 +8,7 @@ Create an Illumina® Sample Sheet , the comma-separated text document required b
 * [Setup](#setup)
 * [Requirements](#requirements)
 * [Synopsis](#synopsis)
-* [Operation notes](#operation%20notes)
+* [Operation notes](#operationnotes)
 * [Input notes](#input%20notes)
 * [Output notes](#output%20notes)
 * [Visual summary of key script operations](#visual%20summary%20of%20key%20script%20operations)
@@ -21,8 +21,7 @@ Create an Illumina® Sample Sheet , the comma-separated text document required b
 Sequencing by synthesis (SBS) collects millions to billions of DNA sequence reads *en masse*. DNA templates from tens to thousands of independent sample sources can be barcoded, pooled, and sequenced on a common flow cell. Unique indices (barcodes) allow pooled reads to be re-assigned to cognate sample sources (demultiplexed).  
 <br/><br/>
 
-**This script automates creation of an Illumina® Sample Sheet, the comma-separated text document required by Illumina® sequencing systems to specify (1) sequencing parameters and (2) sample-barcode relationships.** With this script, a Sample Sheet with up to 9,216 sample-barcode relationships can be automatically generated in <1 second, following user entry of a single list containing up to 96 sample names assigned to an i7 index range and unique i5 index.  
-
+**This script automates creation of an Illumina® Sample Sheet, the comma-separated text document required by Illumina® sequencing systems to specify (1) sequencing parameters and (2) sample-barcode relationships.** With this script, a Sample Sheet with up to 9,216 sample-barcode relationships can be automatically generated in <1 second, following user entry of a single list containing up to 96 sample prefixes assigned to an i7 index range and unique i5 index (each sample prefix to be expanded to up to 96 individual samples, suffixed by well ID (*i.e.*, A01-H12) of a 96-well plate).
 
 
 ## Features
@@ -53,11 +52,11 @@ Jupyter Notebook file requires *SampleSheet_img* directory containing five image
 Note on index usage: In this script, i7 is designated for use in full plate format (each well is uniquely barcoded by a single i7 index), whereas i5 defines all wells of a specific plate (up to 96 wells in a single plate are barcoded by a common i5 index).  Primer sequences (and indices used by SampleSheet.py) can be found in associated files, i7\_barcode\_primers.xls and i5\_barcode\_primers.xls.
 
 For further usage details, please refer to the following manuscript:  
->*Ehmsen, Knuesel, Stenglein, Martinez, Asahina, Aridomi, deRisi, Yamamoto (2019)*
+>*Ehmsen, Knuesel, Stenglein, Martinez, Asahina, Aridomi, DeRisi, Yamamoto (2019)*
     
 Please cite usage as:  
 >SampleSheet.py  
->*Ehmsen, Knuesel, Stenglein, Martinez, Asahina, Aridomi, deRisi, Yamamoto (2019)*
+>*Ehmsen, Knuesel, Stenglein, Martinez, Asahina, Aridomi, DeRisi, Yamamoto (2019)*
  
 
 
@@ -67,9 +66,9 @@ Please cite usage as:
 This script automates creation of a Sample Sheet compatible with Illumina® sequencing, based on custom i7 (96) and i5 (96) index sequences used to barcode up to 9,216 distinct samples. Specifically, the script performs these operations:
 
  1. **collect user input**
+    - specify Dual Indexed Sequencing Workflow (A *vs.* B)
     - specify Investigator Name, Project Name
     - specify single index (SE) *vs.* dual-indexed (PE) barcode format
-    - specify Dual Indexed Sequencing Workflow (A *vs.* B)
     - collect Data relationships (sample ID, i7 barcode range (1-96) and single i5 barcode (1-96)  
  
  
@@ -93,11 +92,11 @@ You will be prompted for the following user-specific information:
       *how many sequencing cycles (read length for R1 (Read 1) and R2 (Read 2))?*  
       *...comma-separated character string indicating SE vs. PE, # of sequencing cycles (R1), # of sequencing cycles (R2, if applicable)*
       <li>List of sample:barcode relationships</li>
-          *single lines of comma-separated character strings specifying overarching sample name to assign to up to 96 samples arrayed in 96-well plate format (name is parsed to samples with well suffixes, e.g., -A01, -A02...-H12); barcode assignments (i7 and i5) are designated to individual samples based on integer range (i7) or integer (i5) assigned to plate*
+      *single lines of comma-separated character strings specifying overarching sample prefix to assign to up to 96 samples arrayed in 96-well plate format (prefix is parsed to samples with well suffixes, e.g., -A01, -A02...-H12); barcode assignments (i7 and i5) are designated to individual samples based on integer range (i7) or integer (i5) assigned to plate*
       </ul>
   
-Note on list of sample:barcode relationships: This is a list of plate names, i7 index range, and i5 index.  
-For example: 'DG-1, 1-96, 5' on a single line of text would indicate plate name 'DG-1' applied to up to 96 samples (uniqued identified by well position A01-H12), range of i7 indices used to label individual wells in this 96-well plate (*e.g.*, A1 - H12), and i5 index used across all wells of this plate (*e.g.*, A05).
+Note on list of sample:barcode relationships: This is a list of plate names (prefixes), i7 index range, and i5 index.  
+For example: 'DG-1, 1-96, 5' on a single line of text would indicate plate name/prefix 'DG-1' applied to up to 96 samples (uniqued identified by well position A01-H12, *e.g.*, DG-1-A01, DG-1-A02, ... DG-1-H12), range of i7 indices used to barcode individual wells in this 96-well plate (*e.g.*, A01-H12), and i5 index used across all wells of this plate (*e.g.*, A05).
 
 ## Output notes
 In brief: Illumina® Sample Sheets accommodate up to 10 column fields, but only 5 of these (fields 2, 5-8) are required for a sequencing run (indicated below).  This script outputs only these 5 required column fields.  
@@ -124,7 +123,11 @@ Fields customized and output by this script:
 ## Visual summary of key script operations
 In short, **brief user inputs** (*e.g.*, below), are converted to **Sample Sheet** contents compatible with Illumina® sequencing (**key output file**, below). In particular, a minimal list of up to 96 \[Data\] relationships is expanded in microseconds to a \[Data\] section containing up to 9,216 sample:barcode relationships.  
 
+*example*  
+
+------
 **input:**  
+*Path to Sample Sheet file name for creation:* /Users/name/SampleSheet.csv  
 *Workflow:* A  
 *Investigator Name, Project Name*: Dorothy Gale, Sequencing  
 *SE vs. PE, cycle details*: PE, 151, 151  
@@ -135,8 +138,8 @@ DG-2, 1-96, 78
 <br clear="all" />
 **output:**
 <br clear="all" />
-<img src="SampleSheet_img/SampleSheet_example.png" align="mid" width="500">
-
+<img src="SampleSheet_img/SampleSheet_example.png" align="mid" width="500">  
+<div style=text-align:center>...etc.</div>
 
 
 ## Status
