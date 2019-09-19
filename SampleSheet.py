@@ -1,4 +1,5 @@
 #!/usr/local/bin/anaconda3/bin/python3
+# Note: edit shebang line above as appropriate for your system
 # AUTH: Kirk Ehmsen
 # FILE: SampleSheet.py
 # DATE: 08/01/2019
@@ -16,10 +17,10 @@
 # v1.0/Committed 8-01-2019
 # ----------------------------------------------
 # For usage details, please refer to README file at GitHub location and to the following manuscript:
-#   Ehmsen, Knuesel, Stenglein, Martinez, Asahina, Aridomi, DeRisi, Yamamoto (2019)
+#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2019)
 # Please cite usage as:
 #   SampleSheet.py
-#   Ehmsen, Knuesel, Stenglein, Martinez, Asahina, Aridomi, DeRisi, Yamamoto (2019)
+#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2019)
 
 # Operation notes:
 # ==============================================
@@ -81,6 +82,9 @@ else:
 # Time access and conversions, Basic data and time types
 import time
 from datetime import datetime
+
+# Log start time
+initialTime = datetime.now()
 
 # Define 3 lists and 4 dictionaries that this script will use to establish relationships between well_ID number (1-96) and well_ID label (A01-H12) [well_ID_list], between well_ID number (1-96) and index name (i5A01-i5H12 or i7A01-i7H12) [i5_well_IDs and i7_well_IDs], and between index name (i5A01-i5H12 or i7A01-i7H12) and index sequence (8-bp unique sequence) [i5Dict and i7Dict, i5_revcomp_Dict, i7_revcomp_Dict]:
 
@@ -1026,11 +1030,11 @@ print("""
     Python3 is required for operation.  Installation of Python package "PrettyTable" is recommended.
     
     For usage details, please refer to README file at GitHub location and to the following manuscript:
-        Ehmsen, Knuesel, Stenglein, Martinez, Aridomi, Asahina, DeRisi, Yamamoto (2019)
+        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2019)
     
     Please cite usage as:
         SampleSheet.py
-        Ehmsen, Knuesel, Stenglein, Martinez, Aridomi, Asahina, DeRisi, Yamamoto (2019)
+        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2019)
     
     ===========================================================================
     Welcome.  You will be prompted for the following user-specific information:
@@ -1356,13 +1360,13 @@ if readstype == 'PE':
         * When you press Enter twice, the prompt will consider your data entry complete.
 
     Example: imagine that you have 310 samples barcoded across four 96-well plates (some plates containing 96 samples, some plates containing fewer than 96
-    samples). Plate 1 used unique i7 barcodes '1-96' ('i7A01-i7H12') across 96 samples + i5 barcode '4' ('i5A05') for all 96 samples; Plate 2 used the same
-    i7 barcode range + i5 barcode '5' ('i5A05') for its 96 samples, Plate 3 used unique barcodes '1-50' ('i7A01-i7E02') across 50 samples + i5 barcode '2'
-    ('i5A02') for all 50 samples; Plate 4 used unique barcodes '1-68' ('i7A01-i7F08') across 68 samples + i5 barcode '34' ('i5C10') for all 68 samples.
+    samples). Plate 1 used unique i7 barcodes '1-96' ('i7A01-i7H12') across 96 samples + i5 barcode '1' ('i5A01') for all 96 samples; Plate 2 used the same
+    i7 barcode range + i5 barcode '9' ('i5A09') for its 96 samples, Plate 3 used unique barcodes '1-50' ('i7A01-i7E02') across 50 samples + i5 barcode '78'
+    ('i5G06') for all 50 samples; Plate 4 used unique barcodes '1-68' ('i7A01-i7F08') across 68 samples + i5 barcode '34' ('i5C10') for all 68 samples.
     You would enter text, line by line at the command line, that resembles this:
-        DG-1, 1-96, 4
-        DG-2, 1-96, 5
-        DG-3, 1-50, 2
+        DG-1, 1-96, 1
+        DG-2, 1-96, 9
+        DG-3, 1-50, 78
         DG-4, 1-68, 34
 
     When you're done entering plates and their indices, press 'Enter' again to proceed in the script.
@@ -1470,6 +1474,9 @@ To quit the script, type 'Exit' and press Enter, or press 'Ctrl+C'.  """)
         exit(0)
     elif checkup == 'Continue':
         pass
+
+# Log total user interaction time duration 
+interactionDuration = str(datetime.now() - initialTime).split(':')[0]+' hr|'+str(datetime.now() - initialTime).split(':')[1]+' min|'+str(datetime.now() - initialTime).split(':')[2].split('.')[0]+' sec|'+str(datetime.now() - initialTime).split(':')[2].split('.')[1]+' microsec'
 
 # Begin time clock
 startTime = datetime.now()
@@ -1584,7 +1591,7 @@ if workflow == 'A':
             for i in expanded:
                 w = 0
                 while w < len(i[1]):
-                    print(str(count) + "," + i[0] + "-" + well_ID_list[w][1] + "," + i[1][w] + "," + i7revcomp_Dict.get(i[1][w]) + "," + i[2][0] + "," + i5Dict.get(i[2][0]), file = f)
+                    print(str(count) + "," + i[0] + "-" + i[1][w].split('7',1)[1] + "," + i[1][w] + "," + i7revcomp_Dict.get(i[1][w]) + "," + i[2][0] + "," + i5Dict.get(i[2][0]), file = f)
                     w = w + 1
                     count = count + 1
     elif readstype == 'SE':
@@ -1593,7 +1600,7 @@ if workflow == 'A':
             for i in expanded:
                 w = 0
                 while w < len(i[1]):
-                    print(str(count) + "," + i[0] + "-" + well_ID_list[w][1] + "," + i[1][w] + "," + i7revcomp_Dict.get(i[1][w]), file = f)
+                    print(str(count) + "," + i[0] + "-" + i[1][w].split('7',1)[1] + "," + i[1][w] + "," + i7revcomp_Dict.get(i[1][w]), file = f)
                     w = w + 1
                     count = count + 1
 elif workflow == 'B':
@@ -1602,17 +1609,19 @@ elif workflow == 'B':
         for i in expanded:
             w = 0
             while w < len(i[1]):
-                print(str(count) + "," + i[0] + "-" + well_ID_list[w][1] + "," + i[1][w] + "," + i7revcomp_Dict.get(i[1][w]) + "," + i[2][0] + "," + i5revcomp_Dict.get(i[2][0]), file = f)
+                print(str(count) + "," + i[0] + "-" + i[1][w].split('7',1)[1] + "," + i[1][w] + "," + i7revcomp_Dict.get(i[1][w]) + "," + i[2][0] + "," + i5revcomp_Dict.get(i[2][0]), file = f)
                 w = w + 1
                 count = count + 1                  
 
 f.close()
 
+
 # Log script processing time duration 
 processingDuration = str(datetime.now()- startTime).split(':')[0]+' hr|'+str(datetime.now() - startTime).split(':')[1]+' min|'+str(datetime.now() - startTime).split(':')[2].split('.')[0]+' sec|'+str(datetime.now() - startTime).split(':')[2].split('.')[1]+' microsec'
 
 # End of script operations
-print('\nTotal processing time: '+processingDuration)
+print('\nUser input time: '+interactionDuration)
+print('\nSample Sheet processing time: '+processingDuration)
 print("""
 ---------------------------------------------------------------------------------------------------
 Your Sample Sheet is complete.

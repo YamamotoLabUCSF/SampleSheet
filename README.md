@@ -1,5 +1,5 @@
 # SampleSheet.py
-Create an Illumina® Sample Sheet , the comma-separated text document required by Illumina® sequencing systems to specify (1) sequencing parameters and (2) sample-barcode relationships. Customize [Header], [Reads], and [Data] sections; in particular, draw on up to 192 8-bp barcodes (96x i7 &amp; 96x i5 indices) to specify up to 9,216 sample-barcode relationships for multiplexed amplicon sequencing.
+Create an Illumina® Sample Sheet, the comma-separated text document required by Illumina® sequencing systems to specify (1) sequencing parameters and (2) sample-barcode relationships. Customize [Header], [Reads], and [Data] sections; in particular, draw on up to 192 8-bp barcodes (96x i7 &amp; 96x i5 indices) to specify up to 9,216 sample-barcode relationships for multiplexed amplicon sequencing.
  <br/><br/> 
  
 ## Table of contents
@@ -17,11 +17,11 @@ Create an Illumina® Sample Sheet , the comma-separated text document required b
   
 
 ## Background
-<img src="SampleSheet_img/SampleSheet_thumbnail-01.png" align="left" width="600">  
-Sequencing by synthesis (SBS) collects millions to billions of DNA sequence reads *en masse*. DNA templates from tens to thousands of independent sample sources can be barcoded, pooled, and sequenced on a common flow cell. Unique indices (barcodes) allow pooled reads to be re-assigned to cognate sample sources (demultiplexed).  
+<img src="SampleSheet_img/SampleSheet_thumbnail.png" align="left" width="600">  
+Sequencing by synthesis (SBS) collects millions to billions of DNA sequence reads *en masse*. DNA templates from tens to thousands of independent sample sources can be barcoded, pooled, and sequenced on a common flow cell. Unique indices (barcode sequences) allow pooled reads to be assigned to cognate sample sources (demultiplexed).  
 <br/><br/>
 
-**This script automates creation of an Illumina® Sample Sheet, the comma-separated text document required by Illumina® sequencing systems to specify (1) sequencing parameters and (2) sample-barcode relationships.** With this script, a Sample Sheet with up to 9,216 sample-barcode relationships can be automatically generated in <1 second, following user entry of a single list containing up to 96 sample prefixes assigned to an i7 index range and unique i5 index (each sample prefix to be expanded to up to 96 individual samples, suffixed by well ID (*i.e.*, A01-H12) of a 96-well plate).
+**This script automates creation of an Illumina® Sample Sheet, the comma-separated text document required by Illumina® sequencing systems to specify (1) sequencing parameters and (2) sample-barcode relationships.** With this script, a Sample Sheet with up to 9,216 sample-barcode relationships can be automatically generated in <1 second, following user entry of a single simplified list containing up to 96 sample prefixes assigned to an i7 index range and unique i5 index (each sample prefix to be expanded to up to 96 individual samples, suffixed by well ID (*i.e.*, A01-H12) of a 96-well plate).
 
 
 ## Features
@@ -31,8 +31,10 @@ Sequencing by synthesis (SBS) collects millions to billions of DNA sequence read
 	* \[Data] (Sample ID, i7 index, i5 index)
 
 ## Setup
-Code is available as a Jupyter Notebook file (**SampleSheet.ipynb**) or as a Python program file (**SampleSheet.py**).  
-To use: fork and clone this repository to a local destination, or download the file SampleSheet.ipynb or SampleSheet.py.  
+Code is available as a Jupyter Notebook file (**SampleSheet.ipynb**) or as a Python program file (**SampleSheet.py**) for direct use, or pre-packaged with all dependencies as an Open Virtualization Format file for virtual machines (**Alleles\_and\_altered\_motifs.ovf**).  
+ 
+To use: (1) fork and clone this repository to a local destination, or (2) download the file SampleSheet.ipynb or SampleSheet.py (GitHub) or Alleles\_and\_altered\_motifs.ovf (Zenodo, DOI 10.5281/zenodo.3406862).  
+  
 Jupyter Notebook file requires *SampleSheet_img* directory containing five image files to be available in the directory from which the Jupyter Notebook was opened.  
 
 ## Requirements
@@ -49,14 +51,14 @@ Jupyter Notebook file requires *SampleSheet_img* directory containing five image
 
 >(see 'Input notes' for details).
     
-Note on index usage: In this script, i7 is designated for use in full plate format (each well is uniquely barcoded by a single i7 index), whereas i5 defines all wells of a specific plate (up to 96 wells in a single plate are barcoded by a common i5 index).  Primer sequences (and indices used by SampleSheet.py) can be found in associated files, i7\_barcode\_primers.xls and i5\_barcode\_primers.xls.
+Note on index usage: In this script, each i7 index identifies an individual well within a 96-well plate format (each well is uniquely barcoded by a single i7 index), whereas a single i5 index defines all wells of a specific plate (up to 96 wells in a single plate are barcoded by a common i5 index).  Primer sequences (and indices used by SampleSheet.py) can be found in associated files, i7\_barcode\_primers.xls and i5\_barcode\_primers.xls.
 
 For further usage details, please refer to the following manuscript:  
->*Ehmsen, Knuesel, Stenglein, Martinez, Asahina, Aridomi, DeRisi, Yamamoto (2019)*
+>*Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2019)*
     
 Please cite usage as:  
 >SampleSheet.py  
->*Ehmsen, Knuesel, Stenglein, Martinez, Asahina, Aridomi, DeRisi, Yamamoto (2019)*
+>*Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2019)*
  
 
 
