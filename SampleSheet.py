@@ -17,16 +17,16 @@
 # v1.0/Committed 8-01-2019
 # ----------------------------------------------
 # For usage details, please refer to README file at GitHub location and to the following manuscript:
-#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2019)
+#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2020)
 # Please cite usage as:
 #   SampleSheet.py
-#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2019)
+#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2020)
 
 # Operation notes:
 # ==============================================
 # This script accepts text to standard input, and returns a Sample Sheet file compatible with Illumina sequencing platforms.
 # Python3 is required.  Installation of Python package "PrettyTable" is recommended (https://pypi.org/project/PrettyTable/, "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format").
-# Note on PrettyTable: At the script outset, you will have an opportunity to display i7 and i5 barcode names and sequences at the console, in 96-well "array" format.  This operation requires PrettyTable.  This display can be bypassed if PrettyTable is not installed.
+# Note on PrettyTable: At the script outset, you will have an opportunity to display i7 and i5 barcode names and sequences at the console, in 96-well "array" format.  This operation requires PrettyTable.  This display can be bypassed if PrettyTable is not installed.  We recommend creating a Python virtual environment with PrettyTable installed (see README.md file, "System Setup")
 # Note on index usage: In this script, i7 is designated for use in full plate format (each well is uniquely barcoded by a single i7 index), whereas i5 defines all wells of a specific plate (up to 96 wells in a single plate are barcoded by a common i5 index).
 # This script accommodates 96-well bar-coding.
 
@@ -70,6 +70,7 @@ import sys
 
 # Implementation of import
 import importlib
+from importlib import util
 
 # Prettytable
 prettytable_loader = importlib.util.find_spec('prettytable')
@@ -1030,11 +1031,11 @@ print("""
     Python3 is required for operation.  Installation of Python package "PrettyTable" is recommended.
     
     For usage details, please refer to README file at GitHub location and to the following manuscript:
-        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2019)
+        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2020)
     
     Please cite usage as:
         SampleSheet.py
-        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2019)
+        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2020)
     
     ===========================================================================
     Welcome.  You will be prompted for the following user-specific information:
@@ -1075,8 +1076,13 @@ else:
     
     PrettyTable can be found at 'https://pypi.org/project/PrettyTable/', and installed to Python3 using
     'python3 -m pip install prettytable'.
+    
+    Alternatively, PrettyTable can be installed in a Python virtual environment using the
+    SampleSheet_requirements.txt file available in the SampleSheet repository.  Guidelines for creating a
+    Python virtual environment for SampleSheet.py (with PrettyTable installed) can be found in the README.md
+    file in the SampleSheet GitHub repository (https://github.com/YamamotoLabUCSF/SampleSheet).
         
-    Type 'Exit' to quit the script and download and install PrettyTable in your Python path,
+    Type 'Exit' to quit the script and make PrettyTable available to SampleSheet.py,
     or type 'Pass' to proceed without PrettyTable:  """)
     if optout in ('Exit', 'Pass'):
         pass
@@ -1095,7 +1101,7 @@ else:
     Please note that SampleSheet.py requires entry of i7 and i5 identities in number format ('1'-'96') corrresponding
     to well ID, making a console plateview potentially useful.
     
-    As an alternative, a schematic of the console PLATEVIEW can be found in Ehmsen et al. 2019 (Supplemental Figure 6).
+    As an alternative, a schematic of the console PLATEVIEW can be found in Ehmsen et al. 2020 (Supplemental Figure 6).
     """)
         input("    Press Enter to continue...")
 
@@ -1118,7 +1124,7 @@ workflow = input("""
     Fundamentally, Workflow determines the 5'->3' nucleotide sequences entered for i7 and i5 indices in an Illumina
     Sample Sheet, essential for faithful demultiplexing of samples.
     
-    As of June 2019, Illumina sequencing instruments use the two dual-indexed Workflows as follows:
+    As of December 2020, Illumina sequencing instruments use the two dual-indexed Workflows as follows:
       
       Workflow A: MiSeq, NovaSeq 6000, HiSeq 2500, HiSeq 2000
       -------------------------------------------------------
