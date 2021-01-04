@@ -82,14 +82,14 @@ Please cite usage as:
 ---
 #### <span style="color:dodgerblue">Alleles\_and\_altered\_motifs.ovf</span>   
 
-The programs are available for use either individually or packaged into a virtual machine which can be run on Mac, Linux, or Windows operating systems. The "Alleles_and_altered_motifs" virtual machine comes pre-installed with BLAST, MEME, the full hg38 genome BLAST database, test datasets, and all the external dependencies needed to run SampleSheet, CollatedMotifs, and Genotypes. Windows users are encouraged to use the virtual machine to run CollatedMotifs because the MEME suite software upon which CollatedMotifs relies is not natively supported on Windows OS).
+The programs are available for use either individually or packaged into a virtual machine which can be run on Mac, Linux, or Windows operating systems. The "Alleles_and_altered_motifs" virtual machine comes pre-installed with BLAST, MEME, the full hg38 genome BLAST database, test datasets, and all the external dependencies needed to run SampleSheet, CollatedMotifs, and Genotypes. Windows users are encouraged to use the virtual machine to run CollatedMotifs because the MEME suite software upon which CollatedMotifs relies is not natively supported on Windows OS.
 
-* Detailed instuctions on Virtual machine download and setup at <a href="https://doi.org/10.5281/zenodo.3406861">Download Alleles\_and\_altered\_motifs virtual machine</a> from Zenodo,  DOI 10.5281/zenodo.3406861)
+* Detailed instuctions on Virtual machine download and setup at <a href="https://doi.org/10.5281/zenodo.3406861">Download Alleles\_and\_altered\_motifs virtual machine</a> from Zenodo,  DOI 10.5281/zenodo.3406861
 
-* Note: Running the virtual machine requires virtualization software, such as Oracle VM VirtualBox available for download at <a href="https://www.virtualbox.org/">Download virtualbox Software</a>) https://www.virtualbox.org/
+* Note: Running the virtual machine requires virtualization software, such as Oracle VM VirtualBox available for download at <a href="https://www.virtualbox.org/">Download virtualbox Software</a> https://www.virtualbox.org/
 
 
-Linux and Mac users can also follw the steps below to install SampleSheet, Genotypes, and CollatedMotifs. If you are running Windows you can follow the steps below to install SampleSheet and Genotypes (without CollatedMotifs).
+Linux and Mac users can also follow the steps below to install SampleSheet, Genotypes, and CollatedMotifs. If you are running Windows, you can follow the steps below to install SampleSheet and Genotypes (without CollatedMotifs).
 
 
 
@@ -98,7 +98,7 @@ Linux and Mac users can also follw the steps below to install SampleSheet, Genot
 ---
 #### <span style="color:dodgerblue">2.1. Python 3 setup</span>
 
-<span style="color:dodgerblue"> Firts confirm that Python 3 (required) and Jupyter Notebook (optional) are available on your system, or download & install by following the steps below</span>   
+<span style="color:dodgerblue"> First confirm that Python 3 (required) and Jupyter Notebook (optional) are available on your system, or download & install by following the steps below</span>   
 
 
 
@@ -134,9 +134,9 @@ Option 1) Install Python 3 prior to Jupyter Notebook **This option is recommende
 
 ##### <span style="color:dodgerblue">Anaconda (Optional: Python 3 with Jupyter Notebook in one)</span>
  
-Option 2) To install Python 3 and Jupyter Notebook (together as part of Anaconda package)   
+Option 2) Install Python 3 and Jupyter Notebook (together as part of Anaconda package)   
    
-* Note this method has *only been tested for use of SampleSheet.py and Genotypes.py on Windows* and my not work on all Mac or Linux systems in conjunction with the use of Python Virtual Enviornments (virtualenv) to run CollatedMotifs.py**  
+* Note, this method has *only been tested for use of SampleSheet.py and Genotypes.py on Windows* and may not work on all Mac or Linux systems in conjunction with the use of Python Virtual Environments (virtualenv) to run CollatedMotifs.py**  
    
 * [Anaconda (with Jupyter Notebook) Download & Installation](https://jupyter.readthedocs.io/en/latest/install/notebook-classic.html) https://jupyter.readthedocs.io/en/latest/install/notebook-classic.html
 	* Download Anaconda with Python 3, and then follow installation guidelines and prompts when you double-click the downloaded package to complete installation.  
@@ -156,17 +156,17 @@ Anaconda with Jupyter Notebook on Mac
 ###### <span style="color:dodgerblue">Anaconda on Linux</span>
 Anaconda with Jupyter Notebook on Linux   
 
-* To install Anaconda on Linux open terminal and navigate to the folder where Anaconda script (for example Anaconda3-2020.11-Linux-x86_64.sh) was downloaded.  
+* To install Anaconda on Linux, open terminal and navigate to the folder where Anaconda script (for example Anaconda3-2020.11-Linux-x86_64.sh) was downloaded.  
 	* Change the permissions to allow script execution with the chmod +x command for example:
   	`$ chmod +x Anaconda3-2020.11-Linux-x86_64.sh` 
 	* Open the shell script with the ./ command for example:
   	`$ ./Anaconda3-2020.11-Linux-x86_64.sh`
-	* Follow the on-screen prompts and answering "yes" to "Do you whish the installer to initialize Anaconda3 by running conda init? [yes|no]"  
+	* Follow the on-screen prompts and answer "yes" to "Do you wish the installer to initialize Anaconda3 by running conda init? [yes|no]"  
 	* When the install is finished, restart terminal to initiate the new settings
 	* Anaconda navigator can be opened by the following command in a new terminal
   	`$ anaconda-navigator`
-	* Jupyter Notebook can be opened through a selected internet browser (Google Chrome and FireFox have been tested) by selecting "Launch" on the Jupyter Notebook icon from within the home screen of the Anaconda Navigator. Note (base) may appear at the far left of the terminal when Anaconda is activated
-	* To deactivate Anaconda and revert to your default Python settings run the following terminal   command:
+	* Jupyter Notebook can be opened through a selected internet browser (Google Chrome and FireFox have been tested) by selecting "Launch" on the Jupyter Notebook icon from within the home screen of the Anaconda Navigator. Note: (base) may appear at the far left of the terminal when Anaconda is activated
+	* To deactivate Anaconda and revert to your default Python settings, run the following terminal command:
   	`$ conda deactivate` 
 	* To reactivate Anaconda and allow use of anaconda-navigator, run the following terminal command:
    	`$ conda activate`
@@ -185,13 +185,13 @@ Anaconda with Jupyter Notebook on Linux
 						(base) $ which jupyter-notebook
 						/home/altered/anaconda3/bin/jupyter-notebook
 
-	* If you wish to open new default terminals with anaconda deactivated add the `$ conda deactivate` command after the conda init code in your .bashrc file and use the `$ conda activate` command prior to use of the `$ anaconda-navigator` when opening Jupyter Notebooks  
+	* If you wish to open new default terminals with Anaconda deactivated, add the `$ conda deactivate` command after the conda init code in your .bashrc file and use the `$ conda activate` command prior to use of the `$ anaconda-navigator` when opening Jupyter Notebooks  
 	
 ###### <span style="color:dodgerblue">Anaconda on Windows</span>
 
 Anaconda with Jupyter Notebook on Windows for use with SampleSheet.py and Genotypes.py only:
   			
-* Anaconda with Jupyter Notebook installed on a Windows OS will make a separate “Anaconda3 (64 bit)” folder available through the start menu and is kept separate from any other version of Python or Jupyter Notebook on your system. In the Anaconda 3 (64 bit) folder the user will find:
+* Anaconda with Jupyter Notebook installed on a Windows OS will make a separate “Anaconda3 (64 bit)” folder available through the start menu, and is kept separate from any other version of Python or Jupyter Notebook on your system. In the Anaconda 3 (64 bit) folder the user will find:
 
 >Anaconda PowerShell Prompt (Anaconda 3)     
 >Jupyter Notebook (Anaconda 3)   
@@ -263,7 +263,7 @@ SampleSheet.py can be accessed as a **Jupyter Notebook** or **Python program fil
 	
 		* To create an empty directory named 'SampleSheetCode', in the 'Documents' directory:*  
 	`$ mkdir /Users/yourusername/Documents/SampleSheetCode`
-		* To navigate to the directory named 'SampleSheet':	`$ cd /Users/yourusername/Documents/SampleSheetCode`
+		* To navigate to the directory named 'SampleSheetCode':	`$ cd /Users/yourusername/Documents/SampleSheetCode`
 
 	* For example, on Windows PowerShell:  
 	 
@@ -281,23 +281,23 @@ SampleSheet.py can be accessed as a **Jupyter Notebook** or **Python program fil
 
 Python 3 Libraries (required) and virtual environment (optional)
 
-You are now ready to install an **additional Python module** that SampleSheet.py requires for operation.  These Python modules can be installed using one of the following two options:
+You are now ready to install an **additional Python module** that SampleSheet.py requires for operation.  This Python module can be installed using one of the following two options:
 
-* Option A) Utilizing the pip3 command to automatically download the required libraries from the Python Package Index repository ([PyPI](https://pypi.org/)) (https://pypi.org/) and install them into your primary Python 3 directory from the requirements file 'SampleSheet_requirements.txt'. This method is the most simple to execute and will be outlined first.
+* Option A) Use the pip3 command to automatically download the required library from the Python Package Index repository ([PyPI](https://pypi.org/)) (https://pypi.org/), and install it into your primary Python 3 directory from the requirements file 'SampleSheet_requirements.txt'. This method is the most simple to execute and will be outlined first.
 
-* Option B) Installing a Python **virtual environment** (self-contained 'directory' with all the Python modules needed to run SampleSheet.py). This method retains your original Python 3 install unchanged, protecting it from any possible library version conflicts that may arise from installing or updating the SampleSheet.py required libraries.  
+* Option B) Install a Python **virtual environment** (self-contained 'directory' with all the Python modules needed to run SampleSheet.py). This method retains your original Python 3 install unchanged, protecting it from any possible library version conflicts that may arise from installing or updating the SampleSheet.py required libraries.  
   
 ##### <span style="color:dodgerblue">Libraries in default Python</span>  
   
 **Option A) Direct Python 3 library install**
 
-1. Install the Python modules required by SampleSheet.py, using the requirements file named **SamoleSheet_requirements.txt**, located in the SampleSheet repository:
+1. Install the Python module required by SampleSheet.py, using the requirements file named **SampleSheet_requirements.txt**, located in the SampleSheet repository:
 	   
 	`$ pip3 install -r SampleSheet_requirements.txt`  
 	
 	pip3 (Mac/Linux OS) is Python 3's installation manager, and as long as there is an internet connection available, pip3 will access the specified module from PyPI and install it for access by Python 3.
 	
-2. To check that the required SampleSheet.py Python modules were installed properly, now issue the follow command:
+2. To check that the required SampleSheet.py Python module was installed properly, now issue the follow command:
 	
 	`$ pip3 list | grep -E 'prettytable'`
 	
@@ -318,7 +318,7 @@ You are now ready to install an **additional Python module** that SampleSheet.py
 	
 	pip3 is Python 3's installation manager, and as long as there is an internet connection available, pip3 will access the specified module from PyPI (here, virtualenv) and install it for access by Python 3.
 
-2. Next, choose a **directory location** on your machine where you would like to install the files associated with a virtual environment.  This can be any folder/directory location you like (for example, you may have a favorite directory where other Python virtual environments are stored).  Alternatively, simply create the Python virtual environment in the SampleSheet directory you created above (in section 2d).  At the command line, navigate to the location of this directory.
+2. Next, choose a **directory location** on your machine where you would like to install the files associated with a virtual environment.  This can be any folder/directory location you like (for example, you may have a favorite directory where other Python virtual environments are stored).  Alternatively, simply create the Python virtual environment in the SampleSheetCode directory you created above (in section 2d).  At the command line, navigate to the location of this directory.
 	* For example:
 		* To navigate to the directory named 'SampleSheetCode':  
 		`$ cd ~/Documents/SampleSheetCode`
@@ -331,16 +331,16 @@ You are now ready to install an **additional Python module** that SampleSheet.py
 	(b) Activate SampleSheet_env:   
 	`source SampleSheet_env/bin/activate` (Mac/Linux OS)  
 	or  
-	`$ .\CollatedMotifs_env\Scripts\activate` (Windows PowerShell)   
+	`$ .\SampleSheet_env\Scripts\activate` (Windows PowerShell)   
 			
 	(c) You should now see that your command line prompt has changed to indicate that you are in the virtual environment, displaying something along the lines of:  
 	`(SampleSheet_env) $`
 	
-	(d) Now install the Python modules required by SampleSheet.py, using the requirements file named **SampleSheet_requirements.txt**, located in the SampleSheet repository:
+	(d) Now install the Python module required by SampleSheet.py, using the requirements file named **SampleSheet_requirements.txt**, located in the SampleSheet repository:
 	   
 	`$ pip3 install -r SampleSheet_requirements.txt`  
 	
-	(e) To check that the required SampleSheet.py Python modules were installed properly, now issue the follow command:
+	(e) To check that the required SampleSheet.py Python module was installed properly, now issue the follow command:
 	
 	`$ pip3 list`
 	
@@ -356,7 +356,7 @@ You are now ready to install an **additional Python module** that SampleSheet.py
 	(Mac/Linux OS)   
 	```$ pip3 install ipykernel```   
 	```$ python -m ipykernel install --name=SampleSheet_env```  
-note administrator privilages may be needed on your system in which case use the following command  
+note, administrator privileges may be needed on your system, in which case use the following command  
 	```$ pseudo python -m ipykernel install --name=SampleSheet_env```  
 followed by your administrator password
 
@@ -388,7 +388,7 @@ followed by your administrator password
 
 #### <span style="color:dodgerblue">2.4 External dependencies</span>  
 
-*There are not external dependencies for SampleSheet*  
+*There are no external dependencies for SampleSheet*  
   
 <br>  
 
@@ -405,11 +405,11 @@ In [System setup](#system-setup) above, you downloaded and installed Python 3 & 
 ##### <span style="color:dodgerblue">Command line .py</span>
 
 
-* To start the SampleSheet.py program directly from the command line enter the follwing command
+* To start the SampleSheet.py program directly from the command line, enter the follwing command:
 
 	`$ python3 [path_to_SampleSheet.py]/SampleSheet.py`
 
-* for example if you installed SampleSheet.py within the SampleSheetCode folder on your desktop the command would be:
+* For example, if you installed SampleSheet.py within the SampleSheetCode folder on your desktop, the command would be:
 
 	`$ python3 ~/Desktop/SampleSheetCode/SampleSheet.py`
 
@@ -417,7 +417,7 @@ In [System setup](#system-setup) above, you downloaded and installed Python 3 & 
 
 ##### <span style="color:dodgerblue">Command line .py in virtual environment</span>
 
-1.  If you plan to run SampleSheet.py using the CollateMotifs_env Python3 virtual environment from your command line, first navigate to the directory containing **SampleSheet.py**.  Prepare access to a Python virtual environment containing appropriate packages required by SampleSheet.py, as described in [System setup](#system-setup).  
+1.  If you plan to run SampleSheet.py using the SampleSheet_env Python3 virtual environment from your command line, first navigate to the directory containing **SampleSheet.py**.  Prepare access to a Python virtual environment containing appropriate packages required by SampleSheet.py, as described in [System setup](#system-setup).  
 
     (a) Activate SampleSheet_env:   
 	`$ source SampleSheet_env/bin/activate` (Mac/Linux OS)   
@@ -439,7 +439,7 @@ In [System setup](#system-setup) above, you downloaded and installed Python 3 & 
 
 Note, Jupyter Notebook file requires SampleSheet_img directory containing five image files to be available in the directory from which the Jupyter Notebook will be opened.   
 
-1. To start Jupyter Notebook directly from the command line enter the follwing command:   
+1. To start Jupyter Notebook directly from the command line, enter the following command:   
 
 	`$ jupyter notebook` or alternatively `$ jupyter-notebook`   
 
@@ -451,17 +451,17 @@ Note, Jupyter Notebook file requires SampleSheet_img directory containing five i
 
 *Note*, Jupyter Notebook file requires *SampleSheet_img* directory containing five image files to be available in the directory from which the Jupyter Notebook will be opened.   
 
-1.  If you downloaded **Anaconda (with Jupyter Notebook)**, launch the Anaconda-Navigator application.  Click on **Jupyter Notebook** to activate Jupyter Notebook. Otherwise open Jupyter Notebook with the terminal command `$ jupyter notebook` or `$ jupyter-notebook`  
+1.  If you downloaded **Anaconda (with Jupyter Notebook)**, launch the Anaconda-Navigator application.  Click on **Jupyter Notebook** to activate Jupyter Notebook. Otherwise, open Jupyter Notebook with the terminal command `$ jupyter notebook` or `$ jupyter-notebook`  
 
 2.  You will see a new **tab open automatically in your default web browser** (such as Chrome), in which there is a **directory tree** illustrating the current file contents of the **current working** directory.  Navigate to the directory containing **SampleSheet.ipynb**.  Click on the **SampleSheet.ipynb** file to open it as a Jupyter Notebook.   
 
-3. In the Jupyter Notebook menu bar at the top of the newly opened SampleSheet.py Jupyter Notebook file, take the following steps to **specify SampleSheet_env as your Python virtual environment** (see [System setup](#system-setup): 3. Create a Python Virtual Environment for Jupyter Notebook):    
+3. In the Jupyter Notebook menu bar at the top of the newly opened SampleSheet.py Jupyter Notebook file, take the following steps to **specify SampleSheet\_env as your Python virtual environment** (see [System setup](#system-setup): 3. Create a Python Virtual Environment for Jupyter Notebook):    
 
 	(a) click on the **'Kernel'** tab to open a drop-down menu  
 	(b) hover your mouse over **'Change Kernel'** (bottom option of drop-down menu) to identify the kernels available to the Notebook  
-	(c) choose **SampleSheet_env** as the kernel  
+	(c) choose **SampleSheet\_env** as the kernel  
 	 
-	 If SampleSheet\_env does not appear as a kernel option, troubleshooting is needed to either create the CollatedMoitfs\_env virtual environment, or to make Jupyter Notebook aware of the existence of the SampleSheet_env virtual environment.
+	 If SampleSheet\_env does not appear as a kernel option, troubleshooting is needed to either create the SampleSheet\_env virtual environment, or to make Jupyter Notebook aware of the existence of the SampleSheet_env virtual environment.
 
 4.  If these steps have been accomplished successfully, you are now ready to use the SampleSheet.ipynb Jupyter Notebook.  Be prepared to provide required input variables as detailed below in **[Input Notes](#input-notes)**.
 <br>
