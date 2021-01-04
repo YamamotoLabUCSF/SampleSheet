@@ -17,10 +17,10 @@
 # v1.0/Committed 8-01-2019
 # ----------------------------------------------
 # For usage details, please refer to README file at GitHub location and to the following manuscript:
-#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2020)
+#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2021)
 # Please cite usage as:
 #   SampleSheet.py
-#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2020)
+#   Ehmsen, Knuesel, Martinez, Asahina, Aridomi, Yamamoto (2021)
 
 # Operation notes:
 # ==============================================
@@ -1031,11 +1031,11 @@ print("""
     Python3 is required for operation.  Installation of Python package "PrettyTable" is recommended.
     
     For usage details, please refer to README file at GitHub location and to the following manuscript:
-        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2020)
+        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2021)
     
     Please cite usage as:
         SampleSheet.py
-        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2020)
+        Ehmsen, Knuesel, Martinez, Aridomi, Asahina, Yamamoto (2021)
     
     ===========================================================================
     Welcome.  You will be prompted for the following user-specific information:
@@ -1101,7 +1101,7 @@ else:
     Please note that SampleSheet.py requires entry of i7 and i5 identities in number format ('1'-'96') corrresponding
     to well ID, making a console plateview potentially useful.
     
-    As an alternative, a schematic of the console PLATEVIEW can be found in Ehmsen et al. 2020 (Supplemental Figure 6).
+    As an alternative, a schematic of the console PLATEVIEW can be found in Ehmsen et al. 2021 (Supplemental Figure 6).
     """)
         input("    Press Enter to continue...")
 
