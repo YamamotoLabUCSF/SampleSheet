@@ -535,14 +535,14 @@ In short, **brief user inputs** (*e.g.*, below), are converted to **Sample Sheet
 ------
 **input:**  
 *Path to Sample Sheet file name for creation:* /Users/name/SampleSheet.csv  
-*Workflow:* A
-*Investigator Name, Project Name*: Dorothy Gale, Sequences 
+*Workflow:* A  
+*Investigator Name, Project Name*: Dorothy Gale, sequences  
 *SE vs. PE, cycle details*: PE, 151, 151  
-*sample:barcoded relationships:*  
-DG-1, 1-96, 1
-DG-2, 1-96, 9
-DG-3, 1-50, 78
-DG-4, 1-68, 34 
+*sample:barcoded relationships:*    
+DG-1, 1-96, 1  
+DG-2, 1-96, 9  
+DG-3, 1-50, 78  
+DG-4, 1-68, 34  
 <br clear="all" />
 **output:**
 <br clear="all" />
