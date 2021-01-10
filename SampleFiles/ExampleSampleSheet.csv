@@ -2,7 +2,7 @@
 IEMFileVersion,4
 InvestigatorName,Dorothy Gale
 ProjectName,Sequences
-Date,09/14/2019
+Date,01/03/2021
 Workflow,GenerateFASTQ
 Application,FASTQ Only
 Assay,Nextera
