@@ -26,10 +26,10 @@ Create an Illumina® Sample Sheet, the comma-separated text document required by
 * [Code launch notes](#code-launch-notes)  
 	* [Launching .py program](#launching-py-program)
 		* [Command line .py](#command-line-py)
-		* [Command line .py in virtual environmnet](#command-line-py-in-virtual-environment)
+		* [Command line .py in virtual environment](#command-line-py-in-virtual-environment)
 	* [Launching .ipynb program](#launching-ipynb-program)
 		* [Jupyter Notebook .ipynb](#jupyter-notebook-ipynb)
-		* [Jupyter Notebook .ipynb in virtual environmnet](#jupyter-notebook-ipynb-in-virtual-environment)
+		* [Jupyter Notebook .ipynb in virtual environment](#jupyter-notebook-ipynb-in-virtual-environment)
 * [Operation notes](#operation-notes)  
 * [Input notes](#input-notes)  
 * [Output notes](#output-notes)  
@@ -535,13 +535,14 @@ In short, **brief user inputs** (*e.g.*, below), are converted to **Sample Sheet
 ------
 **input:**  
 *Path to Sample Sheet file name for creation:* /Users/name/SampleSheet.csv  
-*Workflow:* A  
-*Investigator Name, Project Name*: Dorothy Gale, Sequencing  
+*Workflow:* A
+*Investigator Name, Project Name*: Dorothy Gale, Sequences 
 *SE vs. PE, cycle details*: PE, 151, 151  
 *sample:barcoded relationships:*  
-DG-1, 1-96, 4  
-DG-2, 1-96, 9  
-DG-2, 1-96, 78  
+DG-1, 1-96, 1
+DG-2, 1-96, 9
+DG-3, 1-50, 78
+DG-4, 1-68, 34 
 <br clear="all" />
 **output:**
 <br clear="all" />
